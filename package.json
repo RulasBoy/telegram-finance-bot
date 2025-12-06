@@ -1,0 +1,41 @@
+{
+  "name": "telegram-finance-bot",
+  "version": "1.0.0",
+  "description": "AI-powered Telegram bot for tracking expenses and income using natural language processing with Claude API and PostgreSQL",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch & node --watch dist/index.js",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "finance",
+    "expenses",
+    "ai",
+    "claude"
+  ],
+  "author": "Raul Alvarez Espinoza",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.3",
+    "dotenv": "^16.4.5",
+    "pg": "^8.11.3",
+    "pino": "^9.3.0",
+    "telegraf": "^4.15.6",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/pg": "^8.11.0",
+    "pino-pretty": "^11.2.2",
+    "typescript": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

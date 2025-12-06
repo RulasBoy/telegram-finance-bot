@@ -1,0 +1,25 @@
+[Unit]
+Description=Telegram Finance Bot - AI-powered expense tracking bot
+After=network.target postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=raul
+WorkingDirectory=/home/raul/Documents/telegram-finance-bot
+Environment="NODE_ENV=production"
+EnvironmentFile=/home/raul/Documents/telegram-finance-bot/.env
+ExecStart=/usr/bin/node /home/raul/Documents/telegram-finance-bot/dist/index.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=telegram-finance-bot
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+
